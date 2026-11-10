@@ -1,66 +1,254 @@
-<!--Muhammad Suleman Afzal
-26i_3073
-BSSE_B
-IICT LAB_11-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Adoption Profile</title>
+
+    <title>Paws & Connect | Pet Adoption</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Welcome!</h1>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <nav class="navbar container">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">🐾</span>
+                Paws & Connect
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pets">Our Pets</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="theme-toggle" class="theme-toggle"
+                    aria-label="Toggle dark and light mode">
+                ☀️
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- ================= HOME / HERO ================= -->
+        <section id="home" class="hero">
+
+            <div class="hero-content container">
+
+                <span class="hero-label">FIND YOUR FOREVER FRIEND</span>
+
+                <h1>
+                    Every Pet Deserves
+                    <span>A Loving Home.</span>
+                </h1>
+
+                <p>
+                    Discover wonderful companions waiting for a family.
+                    Your new best friend might be just one click away.
+                </p>
+
+                <div class="hero-image-wrapper">
+                    <img
+                        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=85"
+                        alt="Happy dog surrounded by nature"
+                        class="hero-image">
+                </div>
+
+                <a href="#pets" class="hero-button">
+                    Explore Our Pets →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SEARCH ================= -->
+        <section class="search-section container">
+
+            <div class="search-heading">
+                <h2>Find Your Companion</h2>
+                <p>Search for anything related to pets.</p>
+            </div>
+
+            <form id="search-form" class="search-form">
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search pets, breeds, adoption..."
+                    required>
+
+                <button type="submit">
+                    Search →
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= PET DIRECTORY ================= -->
+        <section id="pets" class="pets-section container">
+
+            <div class="section-heading">
+                <span class="section-label">OUR COMPANIONS</span>
+                <h2>Meet Our Pets</h2>
+                <p>Every animal has a story. Discover yours.</p>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table class="pet-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Breed</th>
+                            <th>Price</th>
+                            <th>Adoption Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="pet-table-body">
+                        <!-- Pet rows will be generated using JavaScript -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PET DETAIL VIEW ================= -->
+        <section id="pet-detail" class="pet-detail-section container hidden">
+
+            <button id="back-to-pets" class="back-button">
+                ← Back to All Pets
+            </button>
+
+            <div id="pet-detail-content">
+                <!-- Individual pet profile will be generated using JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT US ================= -->
+        <section id="about" class="about-section">
+
+            <div class="about-content container">
+
+                <span class="section-label">OUR MISSION</span>
+
+                <h2>Love Has Four Paws.</h2>
+
+                <p>
+                    Paws & Connect is dedicated to connecting loving families
+                    with animals in need of a home. We believe every pet deserves
+                    kindness, care, and a second chance.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="contact-section container">
+
+            <div class="section-heading">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2>Contact Us</h2>
+                <p>Have questions about adoption? We are here to help.</p>
+            </div>
+
+            <div class="contact-card">
+
+                <p><strong>Email:</strong> pawsandconnect@example.com</p>
+
+                <p><strong>Phone:</strong> +92 300 0000000</p>
+
+                <p><strong>Location:</strong> Pakistan</p>
+
+                <button id="contact-button" class="contact-button">
+                    Contact Our Team
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= ADOPTION SUCCESS MODAL ================= -->
+    <div id="adoption-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button id="close-modal" class="modal-close"
+                    aria-label="Close modal">
+                &times;
+            </button>
+
+            <div class="modal-icon">🐾</div>
+
+            <h2>Congratulations!</h2>
+
+            <p id="modal-message">
+                Your adoption journey has begun!
+            </p>
+
+            <button id="modal-confirm" class="modal-button">
+                Wonderful!
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-content container">
+
+            <a href="#home" class="logo">
+                🐾 Paws & Connect
+            </a>
+
+            <p>Connecting hearts, one paw at a time.</p>
+
+            <p class="copyright">
+                © 2026 Paws & Connect. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="code.js"></script>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html>
-    <body>
-
-<h2>Pet Adoption Profile</h2>
-<img src="/Image/abc.jpg" alt="Pet Image" height="600">
-
-</body>
-
-<body>
-<a href="http://"><h1 style="color:blue;">Search...</h1></a>
-
-
-<p style="color:red;">Pet List:</p>
-
-
-
-</html>
-<table border="1">
-    <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Breed</th>
-    </tr>
-   <a href="http://"><tr>
-        <td>Dog1</td>
-        <td>8</td>
-        <td>huski</td>
-    </tr></a> 
-    <a href="http://"><tr>
-        <td>Dog2</td>
-        <td>3</td>
-        <td>Buldo</td></a> 
-    </tr>
-    <a href="http://"> <tr>
-        <td>Cat1</td>
-        <td>4</td>
-        <td>Persian</td></a>
-    </tr>
-     <a href="http://"><tr>
-        <td>Cat2</td>
-        <td>2</td>
-        <td>Doll</td></a>
-    </tr>
-    
-</table>
-
-</body>
